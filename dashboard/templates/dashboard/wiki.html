@@ -1,27 +1,37 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 
-<section class="text-center container">
-  <h2>Search articles in wikipedia</h2>
-  <p>just enter the search query to obtain the results</p>
-  <b>Enter without any space</b>
-  <form action="" method="post">
+<section
+  class="text-center container"
+  style=" max-height: 100%"
+>
+  <h2 style="font-size: 2.5em; color: green">Search articles</h2>
+  <hr
+    style="height: 1px; border-width: 0; color: gray; background-color: gray"
+  />
+  <p style="color: gray; opacity: 0.5">
+    just enter the search query to obtain the results
+  </p>
+  <b style="color: gray; opacity: 0.5">Enter without any space</b>
+  <form action="" method="post" style="padding-top: 10px" class="text-light">
     {% csrf_token %} {{form}}
     <input class="btn btn-danger" type="submit" value="Submit" />
   </form>
   <br />
 
   <div class="container">
-    <div class="content-section p-0 mt-5">
-      <a href="" class="p-0 m-0" target="_blank">
-        <div class="custom-header">
-          <h2>{{title}}</h2>
+    <div
+      class="content-section p-0 mt-5"
+      style="background-color: black; border-radius: 50px 50px"
+    >
+      <a href="" class="p-0 m-0" target="_blank" ">
+        <div class="custom-header" style="border-radius: 50px 50px 0 0;">
+          <h2 style="color: green; font-size: 2.5em">{{title}}</h2>
           {{title}}
-          <h6>{{link}}</h6>
         </div>
       </a>
 
       <hr class="p-0 m-0" />
-      <p class="description m-5 p-5">{{details}}</p>
+      <p class="description m-5 p-5 text-light">{{details}}</p>
       <hr />
     </div>
   </div>

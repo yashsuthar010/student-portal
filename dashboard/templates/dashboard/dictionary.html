@@ -1,17 +1,18 @@
 {% extends 'dashboard/base.html' %} 
 {% load static %} 
 {% block content %}
-<section class='text-center container'>
-    <h2>Student Dictionary</h2>
-    <p>Enter any word to get the phonetics, definition and an example for the word</p>
-    <form action="" method="post">
+<section class='text-center container' style="height: 600px;">
+    <h2 style="font-size: 2.5em;color: green;">Student Dictionary</h2>
+    <hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
+    <p style="color: gray;opacity: .5;">Enter any word to get the phonetics, definition and an example for the word</p>
+    <form action="" method="post" class="text-light">
         {% csrf_token%}
         {{form}}
         <input class="btn btn-danger" type="submit" value="Submit">
     </form><br>
-    <div class="content-section p-0 mt-5">
+    <div class="content-section p-0 mt-5" style="background-color: black;color: white;">
         {% if input %}
-        <div class="custom-header">
+        <div class="custom-header" >
             <h2>{{input}}</h2>
             <h6>{{phonetics}}</h6>
             <audio id="player" src="{{audio}}"></audio>
@@ -26,15 +27,14 @@
             <h4>Definition: {{definition}}</h4>
             <h4>Example: {{example}}</h4>
         </p>
-        Synonyms:
-        {% for synonym in synonyms %}
-            {{synonym}} 
-        {% endfor %}    
+         
         <hr>
 
     </div>
     {% else %}
-    <h2>Sorry, API request limit exceeded</h2>
+    <h2 style="font-size: 2.5em;">NOT FOUND!</h2>
     {% endif %}
 </section>
+
+
 {% endblock content %}

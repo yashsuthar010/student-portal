@@ -1,9 +1,12 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% load
 crispy_forms_tags%} {% block content %}
-<section class="text-center">
+<section class="text-center" style="height: 700px; padding-top: 45px">
   <div class="container">
     {% if not todos_done %}
-    <h2>Due ToDos</h2>
+    <h2 style="color: green; font-size: 2.5em">Due ToDos</h2>
+    <hr
+      style="height: 1px; border-width: 0; color: gray; background-color: gray"
+    />
     <table class="table table-striped table-bordered table-hover table-dark">
       <thead>
         <tr>
@@ -51,14 +54,17 @@ crispy_forms_tags%} {% block content %}
       </tbody>
     </table>
     {% else %}
-    <h3>All To dos are completed!!!!</h3>
+    <h3 style="color: whitesmoke"><b>All To dos are completed!!</b></h3>
     {% endif %}
 
     <a href="{% url 'todo'%}" class="btn btn-danger">To Do</a>
     <br /><br />
 
     {% if not homework_done %}
-    <h2>Due Homeworks</h2>
+    <h2 style="color: green; font-size: 2.5em">Due Homeworks</h2>
+    <hr
+      style="height: 1px; border-width: 0; color: gray; background-color: gray"
+    />
     <table class="table table-striped table-bordered table-hover table-dark">
       <thead>
         <tr>
@@ -112,7 +118,7 @@ crispy_forms_tags%} {% block content %}
       </tbody>
     </table>
     {% else %}
-    <h3>All To homeworks are completed!!!!</h3>
+    <h3 style="color: green"><b>All To homeworks are completed!!</b></h3>
     {% endif %}
     <a href="{% url 'homework'%}" class="btn btn-danger">Homeworks</a>
   </div>

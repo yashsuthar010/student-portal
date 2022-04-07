@@ -1,40 +1,59 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 
-<section class="container text-center">
-  <h3>Welcome</h3>
+<section class="container text-center" style="color: green; padding-top: 40px">
+  <div>
+    <h1 style="font-size: 3rem">
+      <b
+        >Share <br />
+        What You Know!</b
+      >
+    </h1>
+    <hr
+      style="height: 1px; border-width: 0; color: gray; background-color: gray"
+    />
+  </div>
+</section>
 
+<section
+  class="container text-center"
+  style="
+    background-image: linear-gradient(to bottom right, #20bf55, #01baef);
+    padding-left: 200px;
+    border-radius: 50px 50px 0 0;
+    height: 800px;
+  "
+>
   <hr />
   <br />
   <div class="row">
-    <div class="col-md-3">
+    <div class="p-3 mb-5 col-md-3">
       <a href="{% url 'notes' %}">
-        <div class="card">
+        <div
+          class="card shadow-lg"
+          style="background-color: black; border: none"
+        >
           <img
             class="card-img-top"
             src="{% static 'images/notes.jpg' %}"
             alt="Notes image"
           />
           <div class="card-body">
-            <h5 class="card-title">Notes</h5>
-            Create Notes to refer them later. They are stored permanently until
-            deleted
+            <h5 class="card-title text-white">Notes</h5>
           </div>
         </div>
       </a>
     </div>
 
-    <div class="col-md-3">
+    <div class="shadow-none p-3 mb-5 col-md-3">
       <a href="{% url 'homework' %}">
-        <div class="card">
+        <div class="card shadow" style="background-color: black; border: none">
           <img
             class="card-img-top"
             src="{% static 'images/homework.jpg' %}"
             alt="Notes image"
           />
           <div class="card-body">
-            <h5 class="card-title">Homework</h5>
-            Add homeworks and assign them deadlines. They will be displayed
-            prioritised by deadlines
+            <h5 class="card-title text-white">Homework</h5>
           </div>
         </div>
       </a>
@@ -54,23 +73,22 @@
         </div>
       </a>
     </div> -->
-    <div class="col-md-3">
+    <div class="shadow-none p-3 mb-5 col-md-3">
       <a href="{% url 'todo' %}">
-        <div class="card">
+        <div class="card shadow" style="background-color: black; border: none">
           <img
             class="card-img-top"
             src="{% static 'images/todo.jpg' %}"
             alt="Notes image"
           />
           <div class="card-body">
-            <h5 class="card-title">To Do</h5>
-            Add your to-do lists for your day and remove them as you finish
+            <h5 class="card-title text-white">To Do</h5>
           </div>
         </div>
       </a>
     </div>
   </div>
-  <br /><br /><br />
+  <br /><br />
   <div class="row">
     <!-- <div class="col-md-3">
       <a href="#">
@@ -88,33 +106,30 @@
       </a>
     </div> -->
 
-    <div class="col-md-3">
+    <div class="shadow-none p-3 mb-5 col-md-3">
       <a href="{% url 'dictionary' %}">
-        <div class="card">
+        <div class="card shadow" style="background-color: black; border: none">
           <img
             class="card-img-top"
             src="{% static 'images/dictionary.jpg' %}"
             alt="Notes image"
           />
           <div class="card-body">
-            <h5 class="card-title">Dictionary</h5>
-            A vocabulary from a book is troubling you? No problem, enter the
-            word, and the meaning will be displayed almost instantaneously.
+            <h5 class="card-title text-white">Dictionary</h5>
           </div>
         </div>
       </a>
     </div>
-    <div class="col-md-3">
+    <div class="shadow-none p-3 mb-5 col-md-3">
       <a href="{% url 'wiki' %}">
-        <div class="card">
+        <div class="card shadow" style="background-color: black; border: none">
           <img
             class="card-img-top"
             src="{% static 'images/wiki.jpg' %}"
             alt="Notes image"
           />
           <div class="card-body">
-            <h5 class="card-title">WikiPedia</h5>
-            Homework and Assignments? Search wikipedia to get fast results
+            <h5 class="card-title text-white">WikiPedia</h5>
           </div>
         </div>
       </a>
@@ -135,4 +150,6 @@
     </div> -->
   </div>
 </section>
+<br />
+
 {% endblock content %}

@@ -1,10 +1,29 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 
-<div class="border-top pt-3 text-center">
-  <h2>You are logged Out</h2>
+<div
+  class="pt-3 text-center"
+  style="
+    /* border: solid green; */
+    height: 649px;
+    overflow-y: hidden;
+    position: static;
+  "
+>
+  <h2 style="font-size: 3em; color: green; padding-top: 45px">
+    You are logged Out
+  </h2>
+  <hr
+    style="
+      height: 1px;
+      border-width: 0;
+      color: gray;
+      background-color: gray;
+      width: 1100px;
+    "
+  />
 
   <small class="text-muted"
-    ><a class="btn btn-danger" href="{% url 'login' %}">Log In Again</a>
+    ><a class="btn btn-danger" href="{% url 'login' %}">Log In </a>
   </small>
 </div>
 {% endblock content %}

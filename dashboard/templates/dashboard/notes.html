@@ -1,38 +1,76 @@
 {% extends 'dashboard/base.html' %} {% load static %} {%load
 crispy_forms_tags%}{% block content %}
 
-<div class="container">
-  <div class="row">
-    {% for note in notes %}
-    <div class="col-md-3">
-      <a href="{% url 'notes-detail' note.id%}">
-        <div class="card">
-          <div class="card-header">{{note.title}}</div>
-          <div class="card-body">{{note.description|slice:"0:100"}}</div>
-          <div class="card-footer mt-auto">
-            <a href="{% url 'delete-note' note.id %}">
-              <i class="fa fa-trash fa-2x"></i
-            ></a>
+<div style="height: 900px">
+  <h2
+    class="text-center"
+    style="color: green; padding-top: 45px; font-size: 2.5em"
+  >
+    <b>Notes</b>
+  </h2>
+  <!-- <hr
+    style="
+      height: 1px;
+      border-width: 0;
+      color: gray;
+      background-color: gray;
+      width: 1200px;
+    "
+  /> -->
+  <div class="container" style="padding-top: 10px">
+    <hr
+      style="
+        height: 1px;
+        border-width: 0;
+        color: gray;
+        background-color: gray;
+        width: 1100px;
+      "
+    />
+    <div class="row">
+      {% for note in notes %}
+      <div class="col-md-3">
+        <a href="{% url 'notes-detail' note.id%}">
+          <div class="shadow card">
+            <div class="card-header">{{note.title}}</div>
+            <div class="card-body">{{note.description|slice:"0:100"}}</div>
+            <div class="card-footer mt-auto">
+              <a href="{% url 'delete-note' note.id %}">
+                <i class="fa fa-trash fa-2x"></i
+              ></a>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+      {% endfor %}
+      <br /><br />
     </div>
-    {% endfor %}
-    <br /><br />
   </div>
-</div>
-<br /><br />
-<div class="container">
-  <form method="POST">
-    {% csrf_token %}
-    <fieldset class="form-group">
-      <legend class="border-bottom mb-4">Create Notes</legend>
-      {{form}}
-    </fieldset>
-    <div class="form-group">
-      <button href="" class="btn btn-outline-info" type="submit">Create</button>
-    </div>
-  </form>
+  <br /><br />
+  <div class="container" style="padding-top: 30px">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group text-light">
+        <legend
+          class="border-bottom mb-4 text-center"
+          style="color: green; font-size: 2.5em"
+        >
+          <b>Create Notes</b>
+        </legend>
+        {{form}}
+      </fieldset>
+      <div class="form-group">
+        <button
+          href=""
+          class="btn btn-outline-info"
+          type="submit"
+          style="border-color: #4e9f3d; color: #4e9f3d"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 
 {% endblock content %}
